@@ -20,6 +20,11 @@
             color: #0d1b2a;
         }
 
+        p,
+        li {
+            text-align: justify;
+        }
+
         header,
         footer {
             text-align: center;
@@ -57,6 +62,12 @@
             color: #666;
             margin: 1rem 0;
         }
+
+        code{
+            background: #f4f4f4;
+            display: block;
+            text-align: left !important;
+        }
     </style>
 </head>
 
@@ -70,56 +81,172 @@
     <main>
         <section>
             <h2>Introduction</h2>
-            <p>Machine learning (ML) sits at the intersection of technical innovation and societal transformation...</p>
+            <p>Machine learning (ML) sits at the intersection of technical innovation and societal transformation, a
+                duality I explored through this module’s blend of hands-on projects and ethical discourse. Grounded in
+                Rolfe et al.’s (2001) reflective model, this e-portfolio synthesizes my journey from executing basic
+                regression to critiquing neural networks, while navigating team collaboration and ethical dilemmas. The
+                two anchor projects Airbnb NYC pricing analysis (classical ML) and CIFAR-10 object recognition (feature
+                engineering), revealed gaps between textbook theory and real-world complexity, reshaping my approach to
+                model design and evaluation.</p>
         </section>
 
         <section>
             <h2>Technical Mastery</h2>
             <h3>Exploratory Data Analysis & Feature Engineering</h3>
-            <p>The Airbnb project underscored EDA’s role in diagnosing data quality...</p>
-            <div class="image-placeholder">Figure B1: Airbnb NYC Price Distribution</div>
-
-            <h3>Model Development & Limitations</h3>
-            <p>Linear Regression: Despite proper implementation...</p>
-            <div class="image-placeholder">Figure B2: K-Means Clustering Result</div>
+            <p>The Airbnb project underscored EDA’s role in diagnosing data quality. By removing outliers (prices ≥
+                $1,000, minimum_nights > 30) and imputing missing reviews_per_month with 0, I addressed skewness (Wang,
+                2024). Visualizations (e.g., heatmaps, histograms) exposed weak linear correlations between price and
+                features like availability_365 (r = 0.04), challenging my initial assumption that pricing was driven by
+                singular factors.</p>
+            <div class="image-placeholder">
+                <img src="images/price.png" alt="Airbnb NYC Price Distribution" style="width:100%; height:auto;">
+                <p>Figure B1: Airbnb NYC Price Distribution</p>
+            </div>
 
             <h3>Advanced Architectures: ANN & CNN</h3>
-            <p>Though I lacked resources to implement CNNs, theoretical study revealed...</p>
+            <p>Though I lacked resources to implement CNNs, theoretical study revealed their superiority in spatial
+                hierarchies (e.g., image textures). The CIFAR-10 accuracy disparity (SVM: 49.2% vs. CNN: 95%)
+                underscored the need for automated feature learning—a core tenet of deep learning (LeCun et al., 2015).
+                <br>
+                Ethical Trade-off: While CNNs excel in accuracy, their "black-box" nature conflicts with clinical/legal
+                needs for explainability (Hutson, 2021). This tension will guide my future work on hybrid interpretable
+                models.
+            </p>
         </section>
 
         <section>
             <h2>Collaboration & Ethical Leadership</h2>
             <h3>Team Dynamics and Project Synergy</h3>
-            <p>During the Airbnb NYC analysis project, I assumed a leadership role...</p>
+            <p>During the Airbnb NYC analysis project, I assumed a leadership role in Exploratory Data Analysis (EDA)
+                and unsupervised learning (K-Means clustering), while my peers focused on regression modeling and
+                feature engineering. One of our key challenges was harmonizing divergent analytical
+                strategies—particularly around data cleaning thresholds and the treatment of outliers. These
+                disagreements, while initially slowing progress, eventually led to a more robust analytical pipeline.
+            </p>
 
             <h3>Ethical Considerations in Practice</h3>
-            <p>Ethical data stewardship was embedded across all stages of the project...</p>
+            <p>Ethical data stewardship was embedded across all stages of the project:</p>
+            <ul>
+                <li><strong>Data Privacy & Anonymization:</strong> Personal identifiers such as host_name and id were
+                    excluded during preprocessing to ensure GDPR-aligned privacy protection, a critical consideration
+                    given the use of real-world public datasets.</li>
+                <li><strong>Algorithmic Fairness & Equity Awareness:</strong> Our preliminary findings showed that
+                    Airbnb listings in Manhattan had an average price 2.3 x higher than those in the Bronx. While this
+                    reflected actual market trends, it also raised ethical concerns around exclusionary pricing dynamics
+                    and the reinforcement of socioeconomic divides (Noble, 2018). I advocated for integrating
+                    fairness-aware clustering techniques (e.g., demographic parity constraints) in future iterations to
+                    address these biases.</li>
+            </ul>
 
             <h3>Leadership in Ethical Practice</h3>
-            <p>Beyond technical execution, I authored a draft “Team Charter on Ethical Practice”...</p>
+            <p>Beyond technical execution, I authored a draft “Team Charter on Ethical Practice” to guide our work. This
+                included:</p>
+            <ul>
+                <li>Commitments to transparency about model limitations and interpretability,</li>
+                <li>Inclusive communication protocols during team reviews,</li>
+                <li>A review checklist addressing bias, data leakage, and reproducibility.</li>
+            </ul>
+            <p>This code of conduct was adopted informally by our cohort and later shared with other groups as a
+                baseline template for responsible collaboration in data science coursework.</p>
         </section>
 
         <section>
             <h2>Critical Reflection</h2>
             <h3>Technical Mastery and Experiential Learning</h3>
-            <p>This module marked a pivotal stage in the maturation of my ML capabilities...</p>
+            <p>This module marked a pivotal stage in the maturation of my machine learning capabilities, culminating in
+                two cornerstone projects that shaped my understanding of applied AI: the Airbnb NYC 2019 pricing model
+                and the CIFAR-10 object recognition task. <br>
+                From a technical standpoint, I became proficient in Scikit-learn, particularly in applying Support
+                Vector Machines (SVM) and K-Nearest Neighbors (KNN) within structured pipelines. I also delved deeply
+                into feature extraction, where I engineered hybrid vectors combining color histograms and Histogram of
+                Oriented Gradients (HOG) to reduce CIFAR-10’s dimensionality. In parallel, I explored unsupervised
+                learning through K-Means clustering, evaluating segmentation quality using silhouette scores and visual
+                validation techniques. <br>
+                As summarized in Table C2, engineered features yielded 372-dimensional vectors—compact yet expressive
+                enough for traditional classifiers. <br>
+                The Airbnb project allowed me to apply ML in a socio-economic context. We used linear regression to
+                explore pricing predictors and clustering to segment hosts based on behavioral features like
+                availability, engagement, and geographic location. Conversely, the CIFAR-10 assignment emphasized the
+                limitations of classical ML in handling high-dimensional image data, prompting critical comparisons with
+                deep learning architectures. <br>
+                These dual experiences not only consolidated my practical skills, but also forced me to confront the
+                boundaries of interpretability, model generalizability, and the ethical responsibilities of deploying ML
+                in real-world environments.
+            </p>
 
             <h3>Emotional, Cognitive, and Ethical Evolution</h3>
-            <p>Initially, I encountered a great deal of frustration with regression...</p>
+            <p>Initially, I encountered a great deal of frustration with the rigidity and underperformance of linear
+                regression. Despite careful data cleaning and feature encoding, the R² score hovered below 0.30,
+                illuminating the limitations of assuming linearity in a multifactorial system like Airbnb pricing. Yet,
+                this frustration soon morphed into intellectual curiosity: Why was clustering more meaningful in this
+                context than regression? <br>
+                The switch to unsupervised learning unlocked insights that regression could not. Clustering revealed
+                hidden behavioral segments—high-engagement vs low-engagement hosts—which were invisible to any single
+                regression coefficient. The emotional arc of this realization, from dissatisfaction to discovery,
+                underscored how exploratory ML methods can surface patterns that statistical rigor alone may overlook.
+            </p>
 
             <h3>Theory in Practice: Bias and Oppression in ML</h3>
-            <p>This module encouraged me to integrate critical theory into technical evaluation...</p>
+            <p>This module encouraged me to integrate critical theory into technical evaluation. Our Airbnb data, though
+                numeric, revealed latent socio-economic inequalities. Listings in Manhattan were priced on average 2.3 ×
+                higher than those in the Bronx, even after controlling for room type. This disproportionate valuation
+                mirrored patterns described by Noble (2018) in Algorithms of Oppression, where algorithmic design—left
+                unchecked—can amplify systemic disparities. <br>
+                Though our model technically “worked,” it risked replicating exclusionary pricing patterns. This led me
+                to propose future work using fairness-aware clustering algorithms, such as demographic parity
+                constraints or adversarial de-biasing techniques. Here, machine learning is not just a computational
+                tool—it is a mirror held up to society, and our role as practitioners is one of stewardship, not just
+                design.
+            </p>
 
             <h3>Growth in Leadership and Collaboration</h3>
-            <p>Perhaps most profound was my development in collaborative leadership...</p>
+            <p>Perhaps most profound was my development in collaborative leadership. As a student among equals with no
+                formal authority, I learned how to lead through influence rather than instruction. During disagreements
+                over outlier treatment and feature selection, I encouraged the use of A/B testing and model comparison
+                metrics (e.g., silhouette coefficient) to resolve conflicts objectively. This not only improved our
+                model quality but also fostered team cohesion. <br>
+                The practice of reviewing GitHub commit logs, setting up peer reviews, and maintaining a transparent
+                issue-tracking system gave me new appreciation for the discipline of reproducibility in data
+                science—something often overlooked in academic projects but critical in industry and research.
+            </p>
 
             <h3>Translating Learning into Real-World Impact</h3>
-            <p>Inspired by the Airbnb project, I now aim to adapt our clustering methodology...</p>
+            <p>Inspired by the Airbnb project, I now aim to adapt our clustering methodology to healthcare, specifically
+                in segmenting diabetic patients at [Hospital Name Redacted]. By analyzing variables like HbA1c variance,
+                lifestyle behavior logs, and demographic factors, I believe we can develop behavioral subtypes of
+                diabetic patients—those who are more responsive to diet changes, medication, or counseling. The goal is
+                to reduce diagnostic time by 20% by 2026, aligning with NHS digital transformation objectives. <br>
+                From the CIFAR-10 work, I became fascinated by the boundary between interpretable classical methods and
+                high-performing deep learning models. While CNNs achieve superior accuracy, classical methods like
+                HOG+SVM retain a level of transparency ideal for clinical contexts. My next step is to submit a research
+                paper to IEEE Transactions on Pattern Analysis and Machine Intelligence titled: <br>
+                <b>“Hybrid HOG-CNN Architectures for Interpretable Medical Image Classification”,</b> <br>
+                where I argue for combining engineered features with deep feature extraction to improve explainability
+                in critical settings such as radiology or histopathology.
+
+            </p>
         </section>
 
         <section>
             <h2>Conclusion</h2>
-            <p>This e-portfolio serves not only as a record of technical proficiency...</p>
+            <p>This e-portfolio serves not only as a record of technical proficiency across machine learning
+                fundamentals, but also as a reflection of my transformation as a researcher and ethical practitioner.
+                Through the dual lenses of the Airbnb NYC and CIFAR-10 projects, I engaged with a wide spectrum of
+                machine learning methodologies from exploratory data analysis and regression modeling to clustering,
+                classical image classification, and reflective evaluation of algorithmic bias. <br>
+                The process demanded more than technical skill. It required empathy, collaboration, self-awareness, and
+                intellectual humility. I moved beyond viewing models as static tools, coming to see them as socially
+                embedded systems whose design and outcomes shape human experiences in profound ways. I developed a more
+                critical eye for fairness, interpretability, and the limits of performance-driven thinking, particularly
+                when working with real-world data that reflects human inequalities. <br>
+                Furthermore, I cultivated skills in leadership without authority, peer coordination, and ethical
+                advocacy attributes increasingly vital in research environments and professional AI contexts. This
+                growth has informed my future direction: translating machine learning from academic prototype to
+                clinical utility, with a focus on equitable, interpretable, and human-centered AI. <br>
+                This portfolio is therefore not just an endpoint, but a launchpad. The algorithms and models I’ve
+                learned are tools, but the values and questions I’ve embraced around bias, collaboration, and
+                responsibility, are what will shape the kind of researcher and practitioner I strive to be.
+            </p>
         </section>
 
         <section>
@@ -171,11 +298,38 @@
         <section>
             <h2>Appendices</h2>
             <h3>Appendix A – Code Snippets</h3>
-            <p class="image-placeholder">[Code: Feature Extraction, Linear Regression, KMeans]</p>
+            <p class="image-placeholder">
+                <b>A.1 – Feature Extraction (CIFAR-10)</b> <br>
+                <code>def extract_features(X): <br>
+                    color_hist = np.array([color_histogram(img) for img in X]) <br>
+                    hog_feats = np.array([hog_feature(img) for img in X]) <br>
+                    return np.hstack([color_hist, hog_feats])
+                </code>
+            </p>
+            <p class="image-placeholder">
+                <b>A.2 – Linear Regression Model (Airbnb)</b> <br>
+                <code>from sklearn.linear_model import LinearRegression <br>
+                    lr = LinearRegression() <br>
+                    lr.fit(X_train, y_train)
+                </code>
+            </p>
+            <p class="image-placeholder">
+                <b>A.3 – Clustering with KMeans</b> <br>
+                <code>from sklearn.cluster import KMeans <br>
+                        kmeans = KMeans(n_clusters=3, random_state=42) <br>
+                        kmeans.fit(X_scaled)
+                </code>
+            </p>
 
             <h3>Appendix B – Data Visualizations</h3>
-            <div class="image-placeholder">Figure B1: Airbnb NYC Price Distribution</div>
-            <div class="image-placeholder">Figure B2: K-Means Clustering Result</div>
+            <div class="image-placeholder">
+                <img src="images/price.png" alt="Airbnb NYC Price Distribution" style="width:100%; height:auto;">
+                <p>Figure B1: Airbnb NYC Price Distribution</p>
+            </div>
+            <div class="image-placeholder">
+                <img src="images/kmeans.png" alt="K-Means Clustering Result" style="width:100%; height:auto;">
+                <p>Figure B2: K-Means Clustering Result</p>
+            </div>
 
             <h3>Appendix C – Tables</h3>
             <p>Table C1 – Model Accuracy Comparison (CIFAR-10)</p>
@@ -234,15 +388,18 @@
         <section>
             <h2>References</h2>
             <ul>
-                <li>Camatti, M. et al. (2024). Predicting Airbnb pricing: a comparative analysis of AI and traditional approaches. ResearchGate.</li>
+                <li>Camatti, M. et al. (2024). Predicting Airbnb pricing: a comparative analysis of AI and traditional
+                    approaches. ResearchGate.</li>
                 <li>Dalal, N., & Triggs, B. (2005). Histograms of Oriented Gradients for Human Detection. CVPR.</li>
                 <li>Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.</li>
                 <li>Hutson, M. (2021). Robo-writers: the rise of the machine-written word. Nature</li>
-                <li>Krizhevsky, A., & Hinton, G. (2009). Learning Multiple Layers of Features from Tiny Images. CIFAR-10 Dataset.</li>
+                <li>Krizhevsky, A., & Hinton, G. (2009). Learning Multiple Layers of Features from Tiny Images. CIFAR-10
+                    Dataset.</li>
                 <li>Mahfoudi, N. (2024). Optimizing Airbnb Pricing with Data Science. Medium.</li>
                 <li>McKinsey & Company (2022). Personalization: The Next Frontier in Customer Experience.</li>
                 <li>Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python. JMLR.</li>
-                <li>Rolfe, G., Freshwater, D., & Jasper, M. (2001). Critical reflection in nursing and the helping professions: a user's guide. Palgrave Macmillan.</li>
+                <li>Rolfe, G., Freshwater, D., & Jasper, M. (2001). Critical reflection in nursing and the helping
+                    professions: a user's guide. Palgrave Macmillan.</li>
                 <li>Schwab, K. (2016). The Fourth Industrial Revolution. World Economic Forum.</li>
                 <li>Wang, S. (2024). Airbnb Pricing Case Study Part 1. Medium.</li>
                 <li>Noble, S. U. (2018). Algorithms of Oppression.</li>
